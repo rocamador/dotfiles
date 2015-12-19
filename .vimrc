@@ -53,15 +53,17 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " my plugins
+Bundle 'joshdick/onedark.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'bling/vim-airline'
-"Bundle 'kien/ctrlp.vim'
+Bundle 'kien/ctrlp.vim'
 "Bundle 'Shougo/unite.vim'
 Bundle "myusuf3/numbers.vim"
 Bundle "scrooloose/nerdtree"
 Bundle "mhinz/vim-startify"
 Bundle "gioele/vim-autoswap"
-Bundle "zenorocha/dracula-theme", {'rtp':'vim/'}
+"Bundle "zenorocha/dracula-theme", {'rtp':'vim/'}
+Bundle "joshdick/airline-onedark.vim"
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -82,7 +84,7 @@ filetype plugin indent on    " required
 "autocmd vimenter * NERDTree
 
 syntax on
-color dracula
+colorscheme onedark
 
 set paste
 set clipboard=unnamed
@@ -236,7 +238,7 @@ nnoremap <Leader><Down> :e<Space>
 
 " call CtrlP
 "nnoremap <Leader>p :CtrlP<CR>
-"nnoremap <Leader>o :CtrlP<Space> .
+nnoremap <Leader>o :CtrlP<Space> .
 
 set wildchar=<Tab> wildmenu wildmode=full
 
@@ -261,13 +263,20 @@ let g:airline#extensions#tabline#enabled = 1
 
 let g:airline#extensions#tabline#fnamemod=':t'
 
-let g:airline_theme='murmur'
+"let g:airline_theme='murmur'
+let g:airline_theme='onedark'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 
 let g:airline#extensions#tabline#show_tab_nr = 0
 
 let g:airline#extensions#tmuxline#enabled = 1
+
+let g:onedark_termcolors=256
+let g:onedark_terminal_italics=1
+
+"always open NERD Tree on current directory
+let g:NERDTreeChDirMode=2
 
 map <Leader>n :NERDTreeToggle<CR>
 " opens nerdtree on current file dir - no longer needed given the autocmd below
